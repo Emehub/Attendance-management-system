@@ -1,0 +1,11 @@
+# Local credentials and build output
+config/db.php
+hosting-package/
+attendance-hosting.zip
+
+# Personal documents
+*.pdf
+
+# OS / editor
+Thumbs.db
+.vscode/

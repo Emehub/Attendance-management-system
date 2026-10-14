@@ -2,6 +2,24 @@
 
 Web-based attendance system for KNUST Institute of Distance Learning (IDL), built with PHP, MySQL/MariaDB and XAMPP. Students mark attendance with their student ID; staff manage students, courses and lecture sessions, and view or export attendance records.
 
+## Quick start (Windows + XAMPP)
+
+1. Install [XAMPP](https://www.apachefriends.org/) and start **Apache** and **MySQL** in the XAMPP Control Panel.
+2. Clone the project into XAMPP's web folder:
+   ```
+   cd C:\xampp\htdocs
+   git clone https://github.com/Emehub/Attendance-management-system.git student-attendance
+   cd student-attendance
+   ```
+3. Run the setup script. It creates the database, the config file and an admin account, and prints the admin password:
+   ```
+   powershell -ExecutionPolicy Bypass -File tools\setup.ps1 -Port 3306
+   ```
+   Use `-Port 3306` when XAMPP's MySQL runs on its default port (the usual case). The default is 3307, which is what the author's machine uses. If MySQL has a root password, add `-RootPassword yourpassword`.
+4. Open <http://localhost/student-attendance/admin/login.php> and log in as `admin` with the password the script printed. Students use <http://localhost/student-attendance/attendance.php>.
+
+The manual steps below explain what the script does, in case you prefer to set things up by hand.
+
 ## Requirements
 
 - Windows with [XAMPP](https://www.apachefriends.org/) (PHP 8.2+, Apache, MariaDB). The PHP extensions `pdo_mysql` and `mysqli` must be enabled (they are by default).
